@@ -23,7 +23,10 @@
     <gson.version>2.9.1</gson.version>
   </properties>
 
-  <dependencies>
+  <!-- 对子项目进行版本管理-->
+  <dependencyManagement>
+    <dependencies>
 
-  </dependencies>
+    </dependencies>
+  </dependencyManagement>
 </project>
