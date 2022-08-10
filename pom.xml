@@ -5,6 +5,10 @@
   <groupId>com.onecbuying</groupId>
   <artifactId>data-interchange</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>json-demo</module>
+    <module>gson-demo</module>
+  </modules>
   <packaging>pom</packaging>
 
   <name>data-interchange</name>
