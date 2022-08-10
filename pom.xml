@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.onecbuying</groupId>
+  <artifactId>data-interchange</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>data-interchange</name>
+  <description>数据交换格式,反射机制,SpringIOC原理分析父级工程</description>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <junit.version>4.13.2</junit.version>
+    <fastjson.version>2.0.10</fastjson.version>
+    <gson.version>2.9.1</gson.version>
+  </properties>
+
+  <dependencies>
+
+  </dependencies>
+</project>
