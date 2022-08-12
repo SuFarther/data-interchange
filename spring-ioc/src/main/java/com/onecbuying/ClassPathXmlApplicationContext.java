@@ -73,6 +73,7 @@ public class ClassPathXmlApplicationContext {
                 // 获取配置文件属性名称
                 String attField = el.attributeValue(NAME);
                 String attFieldValue = el.attributeValue(VALUE);
+                // 可以获取本类所有的字段,包括private属性
                 Field declaredField = forName.getDeclaredField(attField);
                 declaredField.setAccessible(true);
                 declaredField.set(newInstance, attFieldValue);
