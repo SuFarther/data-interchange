@@ -46,7 +46,7 @@ public class ReflectionTest {
 
     /*
     **
-     * @description:  java反射机制所有剩余属性
+     * @description:  java反射机制所有私有属性
      * @param:
      * @return: void
      * @author 苏东坡
