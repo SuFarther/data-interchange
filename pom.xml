@@ -10,6 +10,7 @@
     <module>gson-demo</module>
     <module>reflection-demo</module>
     <module>springioc-demo</module>
+    <module>spring-ioc</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -30,6 +31,7 @@
     <spring-beans.version>5.3.22</spring-beans.version>
     <spring-context.version>5.3.22</spring-context.version>
     <spring-jdbc.version>5.3.22</spring-jdbc.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
   </properties>
 
   <!-- 对子项目进行版本管理-->
