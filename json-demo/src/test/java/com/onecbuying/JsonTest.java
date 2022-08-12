@@ -4,9 +4,15 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.onecbuying.pojo.Items;
 import com.onecbuying.pojo.User;
+import org.dom4j.Attribute;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -106,5 +112,51 @@ public class JsonTest {
         listItems.add(item2);
         user.setItems(listItems);
         System.out.println(JSONObject.toJSONString(user));
+    }
+
+    /*
+    **
+     * @description:  读取xml文件
+     * @param: null
+     * @return:
+     * @author 苏东坡
+     * @date: 2022/8/12 2:08 PM
+     */
+    @Test
+    public void testReadXml() throws DocumentException {
+        //1、获取到读取对象
+        SAXReader reader = new SAXReader();
+        //读取文件 转换陈Document
+        Document document = reader.read("/System/Volumes/Data/Security/work-file/idea_manage/data-interchange/数据交换格式&反射机制&SpringIOC原理分析资料/student.xml");
+        //获取到根节点
+        Element rootElement = document.getRootElement();
+        getNodes(rootElement);
+    }
+
+    /*
+    **
+     * @description: 获取xml根节点下面的节点使用递归
+     * @param: rootElement
+     * @return: void
+     * @author 苏东坡
+     * @date: 2022/8/12 2:13 PM
+     */
+    public void getNodes(Element rootElement){
+        String name = rootElement.getName();
+        System.out.println("获取节点名称:"+name);
+        //获取属性ID
+        List<Attribute> attributes = rootElement.attributes();
+        for(Attribute attribute : attributes) {
+            System.out.println("属性名称:"+attribute.getName()+",属性值:"+attribute.getText());
+        }
+        if(!rootElement.getTextTrim().equals("")){
+            System.out.println("属性名称:"+rootElement.getName()+",属性值:"+rootElement.getText());
+        }
+        //使用迭代器遍历(判断是否有下一个节点)
+        Iterator<Element> elementIterator = rootElement.elementIterator();
+        while(elementIterator.hasNext()){
+            Element next = elementIterator.next();
+            getNodes(next);
+        }
     }
 }
